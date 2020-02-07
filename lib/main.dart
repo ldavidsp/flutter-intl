@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:testapp/generated/l10n.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:testapp/i18n/i18n.dart';
 
 void main() => runApp(Homeflow());
 
@@ -9,18 +10,26 @@ class Homeflow extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: S.of(context).appName,
-      localizationsDelegates: [S.delegate],
-      supportedLocales: S.delegate.supportedLocales,
+      supportedLocales: [
+        Locale('es'),
+        Locale('en')
+      ],
+      localizationsDelegates: [
+        HFLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      title: 'Homeflow',
       home: Scaffold(
         appBar: AppBar(
-          title: Text(S.of(context).appName),
+          title: Text(HFLocalizations.of(context).title),
         ),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Text(S.of(context).welcome),
+              Text(HFLocalizations.of(context).welcome),
             ],
           ),
         ),
