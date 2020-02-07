@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'generated/l10n.dart';
+import 'package:testapp/generated/l10n.dart';
 
 void main() => runApp(Homeflow());
 
