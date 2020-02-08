@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:testapp/services/i18n.dart';
+import 'package:testapp/i18n/i18n.dart';
 import 'package:testapp/views/home.dart';
 
 void main() => runApp(HomeflowApp());

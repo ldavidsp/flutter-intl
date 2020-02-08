@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:testapp/services/i18n.dart';
+import 'package:testapp/i18n/i18n.dart';
 
 class HomeView extends StatefulWidget {
   @override
