@@ -1,56 +1,46 @@
+import 'dart:ui';
+import 'package:flutter/foundation.dart' show SynchronousFuture;
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 
 class HFLocalizations {
-  final String locale;
   HFLocalizations(this.locale);
 
-  static const LocalizationsDelegate<HFLocalizations> delegate = _HFLocalizationsDelegate();
+  final Locale locale;
 
   static HFLocalizations of(BuildContext context) {
     return Localizations.of<HFLocalizations>(context, HFLocalizations);
   }
 
-  static Map<String, Map<String, String>> value = {
+  static Map<String, Map<String, String>> _localizedValues = {
     'en': {
-      'title': 'Homeflow Flutter',
-      'welcome': 'Welcome to Flutter Homeflow'
+      'title': 'Homeflow Technologies, Inc',
+      'welcome': 'Welcome to Homeflow',
     },
     'es': {
-      'title': 'Homeflow Flutter',
-      'welcome': 'Welcome to Flutter Homeflow'
+      'title': 'Homeflow Technologies, Inc',
+      'welcome': 'Bienvenido a Homeflow',
     },
   };
 
-
-  String get title {
-    return value[locale]['title'];
-  }
-
-  String get welcome {
-    return value[locale]['welcome'];
-  }
+  String get title => _localizedValues[locale.languageCode]['title'];
+  String get welcome => _localizedValues[locale.languageCode]['welcome'];
 }
 
-
-class _HFLocalizationsDelegate extends LocalizationsDelegate<HFLocalizations> {
-  const _HFLocalizationsDelegate();
+class HFLocalizationsDelegate
+    extends LocalizationsDelegate<HFLocalizations> {
+  const HFLocalizationsDelegate();
 
   @override
-  bool isSupported(Locale locale) {
-    return ['es', 'en'].contains(locale.languageCode);
+  bool isSupported(Locale locale) => ['en', 'es'].contains(locale.languageCode);
+
+  @override
+  Future<HFLocalizations> load(Locale locale) {
+    // Returning a SynchronousFuture here because an async "load" operation
+    // isn't needed to produce an instance of HFLocalizations.
+    return SynchronousFuture<HFLocalizations>(HFLocalizations(locale));
   }
 
   @override
-  Future<HFLocalizations> load(Locale locale) async {
-    return HFLocalizations(locale.languageCode);
-//    var lang =  HFLocalizations(locale.languageCode);
-//    await lang.load();
-//    return lang;
-  }
-
-  @override
-  bool shouldReload(LocalizationsDelegate<HFLocalizations> old) {
-    return false;
-  }
-
+  bool shouldReload(HFLocalizationsDelegate old) => false;
 }
