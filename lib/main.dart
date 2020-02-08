@@ -15,9 +15,9 @@ class _HomeflowAppState extends State<HomeflowApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      onGenerateTitle: (BuildContext context) => DemoLocalizations.of(context).title,
+      onGenerateTitle: (BuildContext context) => HFLocalizations.of(context).title,
       localizationsDelegates: [
-        const DemoLocalizationsDelegate(),
+        const HFLocalizationsDelegate(),
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
       ],
@@ -26,7 +26,7 @@ class _HomeflowAppState extends State<HomeflowApp> {
         const Locale('es', ''),
       ],
       // Watch out: MaterialApp creates a Localizations widget
-      // with the specified delegates. DemoLocalizations.of()
+      // with the specified delegates. HFLocalizations.of()
       // will only find the app's Localizations widget if its
       // context is a child of the app.
       home: HomeView(),

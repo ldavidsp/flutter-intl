@@ -12,10 +12,10 @@ class _HomeViewState extends State<HomeView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(DemoLocalizations.of(context).title),
+        title: Text(HFLocalizations.of(context).title),
       ),
       body: Center(
-        child: Text(DemoLocalizations.of(context).welcome),
+        child: Text(HFLocalizations.of(context).welcome),
       ),
     );
   }

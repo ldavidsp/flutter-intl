@@ -3,13 +3,13 @@ import 'package:flutter/foundation.dart' show SynchronousFuture;
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
-class DemoLocalizations {
-  DemoLocalizations(this.locale);
+class HFLocalizations {
+  HFLocalizations(this.locale);
 
   final Locale locale;
 
-  static DemoLocalizations of(BuildContext context) {
-    return Localizations.of<DemoLocalizations>(context, DemoLocalizations);
+  static HFLocalizations of(BuildContext context) {
+    return Localizations.of<HFLocalizations>(context, HFLocalizations);
   }
 
   static Map<String, Map<String, String>> _localizedValues = {
@@ -27,20 +27,20 @@ class DemoLocalizations {
   String get welcome => _localizedValues[locale.languageCode]['welcome'];
 }
 
-class DemoLocalizationsDelegate
-    extends LocalizationsDelegate<DemoLocalizations> {
-  const DemoLocalizationsDelegate();
+class HFLocalizationsDelegate
+    extends LocalizationsDelegate<HFLocalizations> {
+  const HFLocalizationsDelegate();
 
   @override
   bool isSupported(Locale locale) => ['en', 'es'].contains(locale.languageCode);
 
   @override
-  Future<DemoLocalizations> load(Locale locale) {
+  Future<HFLocalizations> load(Locale locale) {
     // Returning a SynchronousFuture here because an async "load" operation
-    // isn't needed to produce an instance of DemoLocalizations.
-    return SynchronousFuture<DemoLocalizations>(DemoLocalizations(locale));
+    // isn't needed to produce an instance of HFLocalizations.
+    return SynchronousFuture<HFLocalizations>(HFLocalizations(locale));
   }
 
   @override
-  bool shouldReload(DemoLocalizationsDelegate old) => false;
+  bool shouldReload(HFLocalizationsDelegate old) => false;
 }
