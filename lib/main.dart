@@ -15,8 +15,7 @@ class _HomeflowAppState extends State<HomeflowApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      onGenerateTitle: (BuildContext context) =>
-          DemoLocalizations.of(context).title,
+      onGenerateTitle: (BuildContext context) => DemoLocalizations.of(context).title,
       localizationsDelegates: [
         const DemoLocalizationsDelegate(),
         GlobalMaterialLocalizations.delegate,

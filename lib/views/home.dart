@@ -15,7 +15,7 @@ class _HomeViewState extends State<HomeView> {
         title: Text(DemoLocalizations.of(context).title),
       ),
       body: Center(
-        child: Text(DemoLocalizations.of(context).title),
+        child: Text(DemoLocalizations.of(context).welcome),
       ),
     );
   }

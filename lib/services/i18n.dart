@@ -14,14 +14,17 @@ class DemoLocalizations {
 
   static Map<String, Map<String, String>> _localizedValues = {
     'en': {
-      'title': 'Hello World',
+      'title': 'Homeflow Technologies, Inc',
+      'welcome': 'Welcome to Homeflow',
     },
     'es': {
-      'title': 'Hola Mundo',
+      'title': 'Homeflow Technologies, Inc',
+      'welcome': 'Bienvenido a Homeflow',
     },
   };
 
   String get title => _localizedValues[locale.languageCode]['title'];
+  String get welcome => _localizedValues[locale.languageCode]['welcome'];
 }
 
 class DemoLocalizationsDelegate
